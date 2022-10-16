@@ -8,19 +8,12 @@ app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 // controllers middleware
 app.use('/akerha', require('./controllers/akerha.js'))
+app.use('/ahbeh', require('./controllers/ahbeh.js'))
 
 // ROUTES
 // home
 app.get('/', (req, res)=>{
     res.render('home.ejs')
-})
-app.get('/ahbeh/animals', (req, res)=>{
-    const faveAnimals = ['sand crab', 'corny joke dog', 'benedict the sea cucumber']
-    res.render('animals.ejs', {animals: faveAnimals})
-})
-app.get('/ahbeh/foods', (req, res)=>{
-    const faveFoods = ['tacos', 'kale', 'sushi']
-    res.render('foods.ejs', {foods: faveFoods})
 })
 
 
